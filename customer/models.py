@@ -26,26 +26,5 @@ class Order(models.Model):
     date = models.DateField(null=True)
 
 
-class Dish(models.Model):
-    discount = models.FloatField(default=1.0)
-    estPrice = models.FloatField()
-    Like = models.IntegerField(default=5)
-    name = models.CharField(max_length=30)
-    order = models.ManyToManyField('Order')
-    customer = models.ForeignKey('Customer', blank=True)
-
-
-class DishPhoto(models.Model):
-    photo = models.ImageField(upload_to='/srv/cokassis/image')
-    dish = models.ForeignKey('Dish', on_delete=models.CASCADE)
-
-
-class SupMaterial(models.Model):
-    breed = models.CharField(max_length=30)
-    qtityInterval = models.CharField(max_length=30)
-    dish = models.ManyToManyField('Dish', through='DishMat')
-
-
-class DishMat(models.Model):
-    Qtity = models.IntegerField()
-    Unit = models.CharField(max_length=30)
+class MatQuantity(models.Model):
+    quantity = models.FloatField()

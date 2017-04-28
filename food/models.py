@@ -17,7 +17,6 @@ class DishMat(models.Model):
 
 class DishPhoto(models.Model):
     photo = models.ImageField(upload_to='/srv/cokassis/image')
-    dish = models.ForeignKey('Dish', on_delete=models.CASCADE)
 
 
 class Material(models.Model):

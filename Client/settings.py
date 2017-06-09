@@ -39,6 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+Cok_INSTALLED_APPS = [
+    'customer',
+    'food',
+    'supplier',
+]
+
+INSTALLED_APPS.extend(Cok_INSTALLED_APPS)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
